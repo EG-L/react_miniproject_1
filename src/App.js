@@ -14,6 +14,7 @@ import BoardList from "./components/board/BoardList";
 import BoardDetail from "./components/board/BoardDetail";
 import BoardUpdate from "./components/board/BoardUpdate";
 import BoardDelete from "./components/board/BoardDelete";
+import NewsList from "./components/news/NewsList";
 function App() {
   return (
       <Router>
@@ -34,6 +35,7 @@ function App() {
               <Route path={"/board/detail/:no"} element={<BoardDetail/>}/>
               <Route path={"/board/update/:no"} element={<BoardUpdate/>}/>
               <Route path={"/board/delete/:no"} element={<BoardDelete/>}/>
+              <Route path={"/news/list"} element={<NewsList/>}/>
           </Routes>
         </div>
       </Router>

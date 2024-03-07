@@ -52,7 +52,7 @@ function Header(){
                             <li><Link to={"/food/find"}>맛집 검색</Link></li>
                         </ul>
                     </li>
-                    <li><Link to={""}>맛집 뉴스</Link></li>
+                    <li><Link to={"/news/list"}>맛집 뉴스</Link></li>
                     <li><Link to={"/board/list"}>커뮤니티</Link></li>
                 </ul>
             </div>

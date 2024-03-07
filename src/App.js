@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Header from "./components/main/Header";
+import FoodList from "./components/food/FoodList";
+import FoodDetail from "./components/food/FoodDetail";
+import GoodsAll from "./components/goods/GoodsAll";
+import GoodsBest from "./components/goods/GoodsBest";
+import GoodsNew from "./components/goods/GoodsNew";
+import GoodsSpecial from "./components/goods/GoodsSpecial";
+import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
+import Home from "./components/main/Home";
+import RecipeDetail from "./components/recipe/RecipeDetail";
+import FoodFind from "./components/food/FoodFind";
+import BoardInsert from "./components/board/BoardInsert";
+import BoardList from "./components/board/BoardList";
+import BoardDetail from "./components/board/BoardDetail";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+        <Header/>
+        <div className={"container"}>
+          <Routes>
+            <Route exact path={"/"} element={<Home/>}/>
+            <Route path={"/food/list"} element={<FoodList/>}/>
+              <Route path={"/food/detail/:fno"} element={<FoodDetail/>}/>
+              <Route path={"/goods/all"} element={<GoodsAll/>}/>
+              <Route path={"/goods/best"} element={<GoodsBest/>}/>
+              <Route path={"/goods/new"} element={<GoodsNew/>}/>
+              <Route path={"/goods/special"} element={<GoodsSpecial/>}/>
+              <Route path={"/recipe/detail/:no"} element={<RecipeDetail/>}/>
+              <Route path={"/food/find"} element={<FoodFind/>}/>
+              <Route path={"/board/list"} element={<BoardList/>}/>
+              <Route path={"/board/insert"} element={<BoardInsert/>}/>
+              <Route path={"/board/detail/:no"} element={<BoardDetail/>}/>
+          </Routes>
+        </div>
+      </Router>
   );
 }
 
